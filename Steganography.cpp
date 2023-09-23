@@ -4,9 +4,9 @@
 #include <vector>
 
 //Private Methods
-/*int Steganography::getNthBit(char cipherChar, int n){
+int Steganography::getNthBit(char cipherChar, int n){
   //Add code here
-  }*/
+}
 
 //Public Methods
 void Steganography::readImage(string fileName){
@@ -27,13 +27,15 @@ void Steganography::readImage(string fileName){
   Infile>>datatemp;
   
   while(Infile){
-    Infile>>datatemp;
     colorData.push_back(datatemp);
+    Infile>>datatemp;
   }
   Infile.close();
 }
 
 void readCipherText(string fileName){
+  Infile.open(fileName);
+
   
 }
 
@@ -51,6 +53,7 @@ void Steganography::cleanImage(){
 }
 void Steganography::encipher(){
   //Add code here
+  
 }
 void Steganography::decipher(){
 //Add code here

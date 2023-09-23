@@ -13,8 +13,8 @@ class Steganography {
   int height;
   int maxColor;
   vector<int> colorData;
-  //  string cipherText;
-  // int getNthBit(char cipherChar, int n);
+  string cipherText;
+  int getNthBit(char cipherChar, int n);
 
  public:
   void readImage(string fileName);

@@ -1,5 +1,6 @@
 #include "Steganography.h"
 #include <iostream>
+#include <fstream>
 #include <vector>
 
 //Private Methods

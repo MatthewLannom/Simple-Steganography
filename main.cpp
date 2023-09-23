@@ -1,4 +1,7 @@
 #include <iostream>
+#include <fstream>
+#include <vector>
+
 #include "Steganography.h"
 
 using namespace std;

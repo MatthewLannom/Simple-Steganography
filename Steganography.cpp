@@ -33,10 +33,18 @@ void Steganography::readImage(string fileName){
   Infile.close();
 }
 
-void readCipherText(string fileName){
+void Steganography::readCipherText(string fileName){
+  ifstream Infile;
   Infile.open(fileName);
-
-  
+  string temp;
+  getline(Infile, temp);
+  cipherText=temp;
+  while(Infile){
+    getline(Infile, temp);
+    cipherText+=temp;
+  }
+  Infile.close();
+  cout<<cipherText;
 }
 
 void Steganography::printImage(string fileName){

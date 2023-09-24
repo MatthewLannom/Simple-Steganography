@@ -50,7 +50,17 @@ void Steganography::readCipherText(string fileName){
 
 void Steganography::printImage(string fileName){
   //Add code here
-  
+  ofstream outFile;
+  outFile.open(fileName);
+  int temp = width*height;
+  temp *= 3;
+  outFile << magicNumber << endl;
+  outFile << width << " " << height << endl;
+  outFile << maxColor << endl;
+  for(int i = 0; i < temp; i++){
+    outFile << colorData[i] << " ";
+  }
+  outFile.close();
 }
 
 
@@ -59,7 +69,12 @@ void Steganography::printCipherText(string fileName){
 }
 void Steganography::cleanImage(){
   //Add code here
-  //Start here
+  int temp = (width*height)*3;
+  for(int i = 0; i < temp; i++){
+    if(colorData[i]%2!=0){
+      colorData[i]-=1;
+    }
+  }
 }
 void Steganography::encipher(){
   //Add code here
@@ -70,13 +85,11 @@ void Steganography::encipher(){
       binary.push_back(getNthBit(cipherText.at(i), j));
     }
   }
-  for(int i=0;i<cipherText.length()*8;i++){
-    if(i%8==0 && i>0){
-      cout<<" ";
-    }
-    cout<<binary[i];
-  }
+  cleanImage();
 
+  for(int i=0; i < cipherText.length()*8; i++){
+    colorData[i]+=binary[i];
+  }
   
 }
 void Steganography::decipher(){

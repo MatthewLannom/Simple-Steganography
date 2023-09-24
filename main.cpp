@@ -27,6 +27,7 @@ int main() {
       Steg.readImage(ppmfile);
 
       Steg.readCipherText(textfile);
+      Steg.encipher();
       c=1;
     }
     else if(opchoice=="d"){

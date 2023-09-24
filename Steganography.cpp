@@ -5,7 +5,9 @@
 
 //Private Methods
 int Steganography::getNthBit(char cipherChar, int n){
-  //Add code here
+  char temp=cipherChar>>n;
+  int bin=temp%2;
+  return bin;
 }
 
 //Public Methods
@@ -44,7 +46,6 @@ void Steganography::readCipherText(string fileName){
     cipherText+=temp;
   }
   Infile.close();
-  cout<<cipherText;
 }
 
 void Steganography::printImage(string fileName){
@@ -58,9 +59,24 @@ void Steganography::printCipherText(string fileName){
 }
 void Steganography::cleanImage(){
   //Add code here
+  //Start here
 }
 void Steganography::encipher(){
   //Add code here
+  vector<int> binary;
+  
+  for(int i=0;i<cipherText.length();i++){
+    for(int j=7;j>=0;j--){
+      binary.push_back(getNthBit(cipherText.at(i), j));
+    }
+  }
+  for(int i=0;i<cipherText.length()*8;i++){
+    if(i%8==0 && i>0){
+      cout<<" ";
+    }
+    cout<<binary[i];
+  }
+
   
 }
 void Steganography::decipher(){

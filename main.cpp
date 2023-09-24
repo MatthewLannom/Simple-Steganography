@@ -23,11 +23,15 @@ int main() {
       cin>>ppmfile;
       cout<<"Enter a text file name"<<endl;
       cin>>textfile;
+      cout << "Enter a ppm file to write into " << endl;
+      string ppmfile2;
+      cin >> ppmfile2;
       
       Steg.readImage(ppmfile);
 
       Steg.readCipherText(textfile);
       Steg.encipher();
+      Steg.printImage(ppmfile2);
       c=1;
     }
     else if(opchoice=="d"){

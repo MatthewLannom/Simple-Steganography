@@ -15,7 +15,8 @@ class Steganography {
   vector<int> colorData;
   string cipherText;
   int getNthBit(char cipherChar, int n);
-
+  int getDecimal(vector<int>::iterator &it);
+  
  public:
   void readImage(string fileName);
   void printImage(string fileName);

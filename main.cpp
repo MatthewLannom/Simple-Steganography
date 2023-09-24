@@ -25,9 +25,16 @@ int main() {
       cin>>textfile;
       
       Steg.readImage(ppmfile);
-
+      cout<<"PPM file Read"<<endl;
       Steg.readCipherText(textfile);
+      cout<<"Text file Read"<<endl;
       Steg.encipher();
+      
+      cout<<"Enter the ppm file you want to write into or create?"<<endl;
+      cin>>ppmfile;
+
+      Steg.printImage(ppmfile);
+      
       c=1;
     }
     else if(opchoice=="d"){

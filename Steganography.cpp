@@ -19,11 +19,7 @@ void Steganography::readImage(string fileName){
   Infile>>magicNumber;
   Infile>>width>>height;
   Infile>>maxColor;
-
-  int temp=height*width;
-  temp=temp*3;
   
-  colorData.reserve(temp);
 
   int datatemp;
   Infile>>datatemp;
@@ -52,13 +48,12 @@ void Steganography::printImage(string fileName){
   //Add code here
   ofstream outFile;
   outFile.open(fileName);
-  int temp = width*height;
-  temp *= 3;
   outFile << magicNumber << endl;
   outFile << width << " " << height << endl;
   outFile << maxColor << endl;
-  for(int i = 0; i < temp; i++){
-    outFile << colorData[i] << " ";
+  vector<int>::iterator it;
+  for(it = colorData.begin(); it != colorData.end(); it++){
+    outFile << *it << " ";
   }
   outFile.close();
 }
@@ -69,12 +64,21 @@ void Steganography::printCipherText(string fileName){
 }
 void Steganography::cleanImage(){
   //Add code here
+  vector<int>::iterator it;
+  for(it = colorData.begin(); it != colorData.end(); it ++){
+   if(*it%2!=0){
+     *it-=1;
+   }
+  }
+      
+  /*
   int temp = (width*height)*3;
   for(int i = 0; i < temp; i++){
     if(colorData[i]%2!=0){
       colorData[i]-=1;
     }
   }
+  */
 }
 void Steganography::encipher(){
   //Add code here
@@ -94,5 +98,6 @@ void Steganography::encipher(){
 }
 void Steganography::decipher(){
 //Add code here
+  
 }
 

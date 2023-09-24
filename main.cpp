@@ -33,10 +33,7 @@ int main() {
       cout<<"Text file Read"<<endl;
       Steg.encipher();
       
-      cout<<"Enter the ppm file you want to write into or create?"<<endl;
-      cin>>ppmfile;
-
-      Steg.printImage(ppmfile);
+      Steg.printImage(ppmfile2);
       
       c=1;
     }

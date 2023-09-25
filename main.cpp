@@ -1,3 +1,12 @@
+/**
+ * @file main.cpp
+ * @author Kevin Austin
+ * @date 2023-09-24
+ * @brief Encodes or decodes ppm files
+ * 
+ * Takes the given ppm file and depending on whether the user wants to encode or decode, will act respectively
+ */
+
 #include <iostream>
 #include <fstream>
 #include <vector>
@@ -7,7 +16,6 @@
 using namespace std;
 
 int main() {
-  //Add code here
   Steganography Steg;
   char opchoice;
   string ppmfile;
@@ -38,29 +46,10 @@ int main() {
       
       c=1;
     }
-    /*
     else if(opchoice=='d'){
       cout<<"Enter ppm file name"<<endl;
-      string ppmfile3;
-      cin>>ppmfile3;
-      cout<<"test";
-      Steg.readImage(ppmfile3);
-      cout<<"File Read";
-
-      Steg.decipher();
-      cout<<"Enter text file to write into or create?"<<endl;
-      cin>>textfile;
-
-      Steg.printCipherText(textfile);
-      
-      c=1;
-    }
-    */
-    else if(opchoice=='d'){
-      cout<<"Enter ppm file name"<<endl;
-      string ppmfile3;
-      cin>>ppmfile3;
-      Steg.readImage(ppmfile3);
+      cin>>ppmfile;
+      Steg.readImage(ppmfile);
       cout<<"File Read"<<endl;
 
       Steg.decipher();

@@ -1,5 +1,5 @@
 CC = g++
-TARGET = test
+TARGET = Steg
 CFLAGS = -g -Wall -Wextra
 
 $(TARGET): Steganography.o main.o

@@ -1,12 +1,3 @@
-/**
- * @file README.md
- * @author Kevin Austin
- * @date 2023-09-25
- * @brief Describes how program works
- * 
- * This README goes into some detail on how the program works and how to use it.
- */
-
 How to call the program?
 -The makefile compiles the program under the name Steg. So just issue ./Steg to run the program.
 

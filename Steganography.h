@@ -6,7 +6,6 @@
  * 
  * Contains the class defintion Steganography
  */
-
 #ifndef STEGANOGRAPHY_H
 #define STEGANOGRAPHY_H
 
@@ -37,7 +36,7 @@ class Steganography {
   int getNthBit(char cipherChar, int n);
 
 /**
- * A function made to convert the binary of a character to the ASCII of a character
+ * A helper method made to convert the binary of a character to the ASCII of a character
  *
  * @param vector<int>::iterator &it A referecend iterator that points to the binary to be used
  * @pre readImage was called
@@ -50,7 +49,7 @@ class Steganography {
  public:
 
 /**
- * reads the PPM file provided by fileName and stores the data in the member variables.
+ * Reads the PPM file provided by fileName and stores the data in the member variables.
  *
  * @param string fileName The ppm file
  * @pre 
@@ -60,6 +59,17 @@ class Steganography {
  */
   void readImage(string fileName);
 
+/**
+ * Reads the to be encoded text from the given fileName
+ *
+ * @param string fileName the name of the to be encoded text
+ * @pre 
+ * @return void 
+ * @post cipherText has data in it
+ * 
+ */
+  void readCipherText(string fileName);
+  
 /**
  * Prints the encoded information the PPM file into either a new PPM file or a preexisting one
  *
@@ -81,17 +91,6 @@ class Steganography {
  * 
  */
   void printCipherText(string fileName);
-
-/**
- * Reads the to be encoded text from the given fileName
- *
- * @param string fileName the name of the the to be encoded text
- * @pre 
- * @return void 
- * @post cipherText has data in it
- * 
- */
-  void readCipherText(string fileName);
 
 /**
  * Zeros out the least significant bit of each color value in colorData.
@@ -123,4 +122,4 @@ class Steganography {
  */
   void decipher();
 };
-#endif
+#endif //STEGANOGRAPHY_H

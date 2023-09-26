@@ -19,6 +19,7 @@ int Steganography::getNthBit(char cipherChar, int n){
 }
 
 int Steganography::getDecimal(vector<int>::iterator &it){
+  //The following 8 variables represent the 8 bits of binary used to store one character
   int tenmil=*it; 
   it++;
   int mil=*it;
@@ -34,29 +35,30 @@ int Steganography::getDecimal(vector<int>::iterator &it){
   int ten=*it;
   it++;
   int ones=*it;
+  //Converting binary to decimal by setting the 1 values equal to 2^n where n is which bit in the sequence it is 
   if(tenmil==1){
-    tenmil=2*2*2*2*2*2*2;
+    tenmil=2*2*2*2*2*2*2; //This is the same as 2^7. It is written this way because we are not using the <cmath> library
   }
   if(mil==1){
-    mil=2*2*2*2*2*2;
+    mil=2*2*2*2*2*2; //2^6
   }
   if(hunthous==1){
-    hunthous=2*2*2*2*2;
+    hunthous=2*2*2*2*2; //2^5
   }
   if(tenthous==1){
-    tenthous=2*2*2*2;
+    tenthous=2*2*2*2; //2^4
   }
   if(thousand==1){
-    thousand=2*2*2;
+    thousand=2*2*2; //2^3
   }
   if(hundred==1){
-    hundred=2*2;
+    hundred=2*2; //2^2
   }
   if(ten==1){
-    ten=2;
+    ten=2; //2^1
   }
   if(ones==1){
-    ones=1;
+    ones=1; //2^0
   }
 
   int dec=tenmil+mil+hunthous+tenthous+thousand+hundred+ten+ones;

@@ -3,7 +3,7 @@ How to call the program?
 
 How we shared work?
 -We decided to meet up in the lab to work on the project in person. That way we could talk and discuss how to go about programming it and how to troubleshoot any problems.
-Because of that we did the same amount of work, but made chantes to files on seperate lab computers so whenever something worked on on of ours the other would get pull that working version.
+Because of that we did the same amount of work, but made changes to files on seperate lab computers so whenever something worked on on of ours the other would get pull that working version.
 
 Design choice
 -For the most part we used the functions given. However, we made our own function for the Steg class that takes the deciphered binary from the colorData and changes it to the corresponding letters ASCII values
